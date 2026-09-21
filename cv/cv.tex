@@ -1,0 +1,193 @@
+% Curriculum vitae — Elie Attal
+% Compile with: pdflatex cv.tex   (or: latexmk -pdf cv.tex)
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---------- Section style ----------
+\definecolor{rule}{gray}{0.6}
+\titleformat{\section}{\large\scshape}{}{0pt}{}[{\color{rule}\titlerule}]
+\titlespacing*{\section}{0pt}{14pt}{8pt}
+% never leave a heading alone at the bottom of a page
+\let\oldsection\section
+\renewcommand{\section}{\Needspace{5\baselineskip}\oldsection}
+
+% ---------- Helpers ----------
+% \entry{left column (dates)}{right column (content)}
+\newlength{\leftcol}
+\setlength{\leftcol}{2.8cm}
+\newcommand{\entry}[2]{%
+  \makebox[\leftcol][l]{\small #1}%
+  \parbox[t]{\dimexpr\linewidth-\leftcol\relax}{#2}\par
+  \vspace{5pt}}
+
+% \pub{title}{coauthors}{venue}{arXiv id}
+\newcommand{\pub}[4]{%
+  \item \textbf{#1}\\
+  {\small #2. #3.
+  \href{https://arxiv.org/abs/#4}{arXiv:#4}}}
+
+\newcommand{\invited}{\textit{(invited)}}
+\newcommand{\prize}[1]{\textit{#1}}
+
+% =====================================================================
+\begin{document}
+
+% ---------- Header ----------
+{\LARGE\bfseries Elie Attal}\par
+\vspace{4pt}
+{\small
+  \href{mailto:elie.attal@polytechnique.edu}{elie.attal@polytechnique.edu}
+  \;$\cdot$\;
+  +33 6 25 70 15 51
+  \;$\cdot$\;
+  \href{https://eattal.github.io}{eattal.github.io}
+  \;$\cdot$\;
+  \href{https://arxiv.org/search/math?searchtype=author&query=Attal,+E}{arXiv}
+  \;$\cdot$\;
+  \href{https://scholar.google.com/citations?user=jp5K33sAAAAJ}{Google Scholar}
+}
+
+% ---------- Education ----------
+\section{Education}
+\entry{2024 -- present}{%
+  \textbf{PhD in applied mathematics}\\ 
+  \textit{CMAP, École Polytechnique}\\
+  Advisors: E. Abi Jaber and M. Rosenbaum.\\
+  Thesis: Interacting agents, jump processes and Volterra processes.}
+\entry{2023 -- 2024}{%
+  \textbf{M2 Probability and Finance}\\
+   \textit{Sorbonne Université / École Polytechnique}}
+\entry{2020 -- 2023}{%
+  \textbf{Ingénieur polytechnicien master's degree}\\
+  \textit{École Polytechnique}\\
+  Master's degree in applied mathematics.}
+
+% ---------- Professional experience ----------
+\section{Professional experience}
+\entry{4 months, 2026}{\textbf{Quantitative research intern}\\
+\textit{Bloomberg L.P., New York}\\
+  {}Developed numerical methods for path-dependent option pricing under rough volatility models. Carried out as part of the Bloomberg Quantitative Finance PhD Fellowship.}
+\entry{6 months, 2024}{\textbf{Quantitative research intern}\\
+\textit{Qube Research \& Technologies, Paris}\\
+  {}Studied the limiting eigenvector overlaps between large random matrices and their submatrices. Published as two papers in \textit{Journal of Physics A: Mathematical and Theoretical}.}
+\entry{5 months, 2023}{\textbf{Quantitative research intern}\\
+\textit{DRW Holdings, London}\\
+  {}Designed a  quoting model for RFQ platforms combining machine learning and probability.}
+\entry{3 months, 2022}{\textbf{Quantitative research intern}\\
+\textit{ITO33, Paris}\\
+{}Extended the Black--Scholes framework to price convertible bonds under takeover risk. Implemented the model in C++ in the company's pricing software.}
+
+% ---------- Awards ----------
+\section{Awards}
+\entry{2026}{\textbf{QRT PhD Prize}\\
+  For the talk \emph{Affine structure of the Brownian signature} at the London--Paris Bachelier Workshop on Mathematical Finance.}
+\entry{2025}{\textbf{Bloomberg Quantitative Finance PhD Fellowship}}
+
+% ---------- Publications ----------
+\section{Publications}
+\begin{itemize}[leftmargin=*,itemsep=4pt]
+  \pub{From hyper roughness to jumps as $H \to -1/2$}
+      {with E. Abi Jaber and M. Rosenbaum}
+      {\emph{The Annals of Applied Probability} 36(4), 3635--3660, 2026}
+      {2503.16985}
+  \pub{Eigenvector overlaps of random covariance matrices and their submatrices}
+      {with R. Allez}
+      {\emph{Journal of Physics A: Mathematical and Theoretical} 58, 205003, 2025}
+      {2501.08768}
+  \pub{Interlacing eigenvectors of large Gaussian matrices}
+      {with R. Allez}
+      {\emph{Journal of Physics A: Mathematical and Theoretical} 58, 045003, 2025}
+      {2409.17086}
+\end{itemize}
+
+% ---------- Preprints ----------
+\section{Preprints}
+\begin{itemize}[leftmargin=*,itemsep=4pt]
+  \pub{Stochastic control with signatures via Riccati equations on the tensor algebra}
+      {with E. Abi Jaber and D. Sotnikov}
+      {2026}
+      {2607.03986}
+  \pub{Affine structure of the Brownian signature}
+      {with E. Abi Jaber and D. Sotnikov}
+      {2026}
+      {2606.29622}
+  \pub{Volterra clocks and their pure-jump limits: hitting times of curved boundaries}
+      {with E. Abi Jaber and A. Søjmark}
+      {2026}
+      {2605.29073}
+  \pub{Efficient simulation of Hawkes processes using their affine Volterra structure}
+      {with E. Abi Jaber and D. Sotnikov}
+      {2025}
+      {2511.13554}
+  \pub{Simulating integrated Volterra square-root processes and Volterra Heston models via inverse Gaussian}
+      {with E. Abi Jaber}
+      {2025}
+      {2504.19885}
+\end{itemize}
+
+% ---------- Talks ----------
+\section{Talks}
+\textbf{Conferences and workshops}\par\vspace{4pt}
+\entry{Sept.\ 2026}{London--Paris Bachelier Workshop on Mathematical Finance, Paris \invited\\
+  \emph{Affine structure of the Brownian signature} --- \prize{QRT PhD Prize}}
+\entry{Sept.\ 2026}{International Conference on Computational Finance, Oxford\\
+  \emph{Simulating integrated Volterra square-root processes and Volterra Heston models via inverse Gaussian}}
+\entry{Apr.\ 2026}{Stochastic Control and Games for Risk \& Regulation, Hammamet\\
+  \emph{Simulating affine Volterra processes via inverse Gaussian}}
+\entry{Jan.\ 2026}{18th Bachelier Colloquium on Financial Mathematics and Stochastic Calculus, Métabief\\
+  \emph{From hyper-roughness to jumps as $H \to -1/2$: the affine case and beyond}}
+\entry{Sept.\ 2025}{Stochastics \& Computational Finance, Lisbon\\
+  \emph{Simulating affine Volterra processes via inverse Gaussian}}
+\entry{July 2025}{Vienna Congress on Mathematical Finance, Vienna\\
+  \emph{From hyper roughness to jumps as $H$ goes to $-1/2$}}
+
+\vspace{4pt}
+\textbf{Seminars}\par\vspace{4pt}
+\entry{Dec.\ 2025}{Seminar of the CMAP MathsFi group, École Polytechnique\\
+  \emph{Simulating affine Volterra processes via inverse Gaussian: the iVi schemes}}
+\entry{May 2025}{Local Seminar, Vega Institute, Moscow (online)\\
+  \emph{From hyper roughness to jumps as $H \to -1/2$}}
+\entry{Mar.\ 2025}{Bachelier Seminar (PhD session), IHP, Paris\\
+  \emph{From hyper roughness to jumps as $H \to -1/2$}}
+\entry{Mar.\ 2025}{Seminar of the CMAP MathsFi group, École Polytechnique\\
+  \emph{From hyper roughness to jumps as $H \to -1/2$}}
+
+% ---------- Teaching ----------
+\section{Teaching}
+\entry{2026 -- 2027}{\textbf{École Polytechnique}\\
+  Supervision of M1 group projects: \emph{Stability of eigenvectors of covariance matrices in finance};
+  \emph{Heat equation and Cole--Hopf transform: entire series representations and numerical schemes}}
+\entry{2025 -- 2026}{\textbf{École Polytechnique}\\
+  Markov processes and applications (M1), tutorial classes\\
+  Probability (L3), tutoring\\[3pt]
+  \textbf{ENSAE}\\
+  Supervision of an M1 group project: \emph{Toward a new stochastic model for integrated variance:
+  insights from SPX and VIX}}
+\entry{2024 -- 2025}{\textbf{École Polytechnique}\\
+  Markov processes and applications (M1), tutorial classes\\
+  Probability (L3), tutoring\\
+  Supervision of an M1 internship: \emph{Numerical schemes for Riccati--Volterra equations}}
+
+% ---------- Skills ----------
+\section{Skills}
+\entry{Languages}{French (native), English (fluent), Spanish (conversational)}
+\entry{Programming}{Python (numpy, scipy, pandas, scikit-learn), SQL, Git, LaTeX, Power BI}
+
+\end{document}

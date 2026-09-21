@@ -1,0 +1,122 @@
+:root {
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --link: #1f4e8c;
+  --rule: #e2e2e2;
+  --bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", "Computer Modern Serif", serif;
+  line-height: 1.55;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* Header & navigation */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+header .name {
+  font-size: 1.35rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+header .name a { color: var(--text); text-decoration: none; }
+
+nav { display: flex; gap: 1.25rem; }
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover, nav a[aria-current="page"] { color: var(--text); }
+
+/* Content */
+h1 { font-size: 1.6rem; font-weight: normal; margin: 0 0 1.25rem; }
+h2 { font-size: 1.15rem; font-weight: normal; margin: 2.25rem 0 0.75rem; color: var(--muted); }
+
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+p { margin: 0 0 1rem; }
+
+.muted { color: var(--muted); }
+
+/* About page */
+.about {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about img {
+  width: 160px;
+  height: auto;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.contact li { margin-bottom: 0.25rem; }
+
+/* Publication & talk lists */
+ol.items, ul.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.items li { margin-bottom: 1.25rem; }
+
+.items .title { display: block; }
+.items .meta { display: block; color: var(--muted); font-size: 0.95rem; }
+.items .talk { display: block; }
+.items .note { display: block; font-size: 0.95rem; }
+.items .note::before { content: "\2605\00a0"; color: #c9a227; }
+.items .links { display: block; font-size: 0.95rem; }
+
+.tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  vertical-align: 0.1em;
+  letter-spacing: 0.02em;
+}
+.items .links a + a { margin-left: 0.6rem; }
+.items .links a + a::before { content: "·"; display: inline-block; margin-right: 0.6rem; color: var(--muted); }
+
+@media (max-width: 600px) {
+  .about { flex-direction: column; }
+  .about img { width: 140px; }
+}
